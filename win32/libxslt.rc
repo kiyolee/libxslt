@@ -26,7 +26,7 @@ BEGIN
       VALUE "OriginalFilename",	"libxslt.dll\0"
       VALUE "ProductName",	"libxslt\0"
       VALUE "ProductVersion",	LIBXSLT_DOTTED_VERSION "\0"
-      VALUE "Comments",		"For more information visit <http://xmlsoft.org/XSLT/>. Alternative build from <https://github.com/kiyolee/libxslt-win-build/>.\0"
+      VALUE "Comments",		"For more information visit <http://xmlsoft.org/XSLT/>. Alternative build from <https://github.com/kiyolee/libxslt/>.\0"
     END
   END
   BLOCK "VarFileInfo"
