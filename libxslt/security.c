@@ -278,7 +278,11 @@ static int
 xsltCheckFilename (const char *path)
 {
 #ifdef HAVE_STAT
+#if defined(_MSC_VER) && _MSC_VER >= 1500
+    struct _stat64 stat_buffer;
+#else
     struct stat stat_buffer;
+#endif
 #if defined(_WIN32) && !defined(__CYGWIN__)
     DWORD dwAttrs;
 
@@ -290,7 +294,13 @@ xsltCheckFilename (const char *path)
     }
 #endif
 
-    if (stat(path, &stat_buffer) == -1)
+    if (
+#if defined(_MSC_VER) && _MSC_VER >= 1500
+        _stat64(path, &stat_buffer)
+#else
+        stat(path, &stat_buffer)
+#endif
+        == -1)
         return 0;
 
 #ifdef S_ISDIR
