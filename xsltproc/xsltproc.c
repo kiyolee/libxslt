@@ -6,7 +6,6 @@
  * daniel@veillard.com
  */
 
-#define IN_XSLTPROC
 #include "libxslt/libxslt.h"
 #include "libxslt/xsltconfig.h"
 #include "libexslt/exslt.h"
